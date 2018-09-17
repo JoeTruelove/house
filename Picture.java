@@ -11,6 +11,7 @@
  */
 public class Picture
 {
+    private Square sky;
     private Square wall;
     private Square window;
     private Triangle roof;
@@ -20,6 +21,7 @@ public class Picture
     private Square basketballback;
     private Square basketballpole;
     private Person man;
+    private Person man2;
     private Square basketballnet;
     private Square basketballnet2;
     private boolean drawn;
@@ -29,6 +31,7 @@ public class Picture
      */
     public Picture()
     {
+        sky = new Square();
         wall = new Square();
         window = new Square();
         roof = new Triangle();  
@@ -38,6 +41,7 @@ public class Picture
         basketballback = new Square();
         basketballpole = new Square();
         man = new Person();
+        man2 = new Person();
         basketballnet = new Square();
         basketballnet2 = new Square();
         
@@ -50,11 +54,17 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
+            sky.changeSize(2000, 2000);
+            sky.moveHorizontal(-400);
+            sky.moveVertical(-1920);
+            sky.makeVisible();
+            sky.changeColor("blue");
+            
             wall.moveHorizontal(-140);
             wall.moveVertical(-30);
             wall.changeSize(120, 120);
             wall.makeVisible();
-            wall.changeColor("blue");
+            wall.changeColor("grey");
             
             window.changeColor("black");
             window.moveHorizontal(-130);
@@ -94,6 +104,10 @@ public class Picture
             man.makeVisible();
             man.moveHorizontal(60);
             man.moveVertical(-32);
+            
+            man2.makeVisible();
+            man2.moveHorizontal(140);
+            man2.moveVertical(-32);
             
             roof.changeColor("brown");
             roof.changeSize(60, 180);
